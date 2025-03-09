@@ -1,4 +1,6 @@
 import Sidebar from "@/presentation/components/layout/sidebar";
+import "@fontsource/quicksand/500.css";
+import "@fontsource/quicksand/700.css";
 
 export default function DashboardLayout({
 	children,

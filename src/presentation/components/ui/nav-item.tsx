@@ -25,7 +25,7 @@ export default function NavItem(props: {
 			>
 				<div>{props.icon}</div>
 				<div className="flex flex-col">
-					<span className={cn("text-sm", isActive && "font-semibold")}>
+					<span className={cn("text-sm", isActive && "font-bold")}>
 						{props.title}
 					</span>
 					<span className="text-text-primary-200 text-xs">

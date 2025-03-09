@@ -1,7 +1,7 @@
 export default function Page() {
 	return (
 		<div>
-			<p>
+			<p className="">
 				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit,
 				fugiat! Facilis eum corporis neque dolorem molestias? Dolor illo natus
 				libero veritatis unde accusantium sequi repellendus temporibus

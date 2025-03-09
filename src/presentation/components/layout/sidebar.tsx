@@ -71,7 +71,7 @@ export default function Sidebar() {
 						width={40}
 						height={40}
 					/>
-					<span className="font-semibold text-sm">Jhon Bocanegra</span>
+					<span className="font-bold text-sm">Jhon Bocanegra</span>
 				</div>
 				<ul className="flex flex-col gap-2">
 					{navItems.map((item) => (

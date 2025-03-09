@@ -1,13 +1,16 @@
+import CartCounter from "@/presentation/components/features/products/cart-counter";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Counter page",
+	description: "Counter page example",
+};
+
 export default function Page() {
 	return (
-		<div>
-			<p>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit,
-				fugiat! Facilis eum corporis neque dolorem molestias? Dolor illo natus
-				libero veritatis unde accusantium sequi repellendus temporibus
-				voluptatum laboriosam at harum aspernatur, itaque tenetur nobis ad
-				quaerat inventore corrupti, repudiandae modi?
-			</p>
+		<div className="flex flex-col items-center justify-center gap-3 w-full h-full">
+			<p>Products in cart</p>
+			<CartCounter value={10} />
 		</div>
 	);
 }

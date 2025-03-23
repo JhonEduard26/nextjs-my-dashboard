@@ -1,6 +1,6 @@
 import type { PokemonResponse, SimplePokemon } from "@/core/entities/pokemon";
+import PokemonGrid from "@/presentation/components/features/pokemons/pokemon-grid";
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
 	title: "Pokemons",
@@ -28,19 +28,7 @@ export default async function Page() {
 	return (
 		<div className="">
 			<p>Pokemons</p>
-			<div className="flex flex-col">
-				{pokemons.map((pokemon) => (
-					<div key={pokemon.id}>
-						<Image
-							src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${pokemon.id}.svg`}
-							alt={pokemon.name}
-							width={100}
-							height={100}
-							unoptimized
-						/>
-					</div>
-				))}
-			</div>
+			<PokemonGrid pokemons={pokemons} />
 		</div>
 	);
 }

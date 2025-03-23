@@ -27,5 +27,5 @@ body {
 	--color-text-primary-200: var(--text-200);
 	--color-background-primary: var(--bg-100);
 	--color-background-primary-200: var(--bg-200);
-	--color-backbround-primary-300: var(--bg-300);
+	--color-background-primary-300: var(--bg-300);
 }

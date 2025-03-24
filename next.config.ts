@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+	experimental: {
+		viewTransition: true,
+	},
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
@@ -10,6 +13,10 @@ const nextConfig: NextConfig = {
 				protocol: "https",
 				hostname: "i.pravatar.cc",
 			},
+			{
+				protocol: "https",
+				hostname: "raw.githubusercontent.com",
+			}
 		],
 	},
 };

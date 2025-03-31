@@ -12,7 +12,7 @@ export default function PokemonCard(props: { pokemon: SimplePokemon }) {
 			className="flex flex-col items-center gap-2 px-2 py-2 bg-background-primary-200 rounded-md"
 		>
 			<ViewTransition
-				name={`pokemon-${pokemon.id}`}
+				name={`pokemon-${pokemon.name}`}
 				className="via-blur"
 				exit="duration-100"
 			>
@@ -26,7 +26,7 @@ export default function PokemonCard(props: { pokemon: SimplePokemon }) {
 				/>
 				<p className="capitalize">{pokemon.name}</p>
 
-				<Link href={`/dashboard/pokemon/${pokemon.id}`}>More info</Link>
+				<Link href={`/dashboard/pokemon/${pokemon.name}`}>More info</Link>
 			</ViewTransition>
 		</div>
 	);

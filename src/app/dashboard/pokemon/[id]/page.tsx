@@ -1,4 +1,4 @@
-import type { Pokemon } from "@/core/entities/pokemon";
+import type { Pokemon, PokemonResponse } from "@/core/entities/pokemon";
 import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import { unstable_ViewTransition as ViewTransition } from "react";
@@ -23,6 +23,24 @@ export async function generateMetadata(
 	}
 }
 
+export const dynamicParams = true;
+
+// export async function generateStaticParams() {
+// 	const staticPokemons = Array.from({ length: 151 }).map((_, i) => `${i + 1}`);
+// 	return staticPokemons.map((id) => ({
+// 		id: id,
+// 	}));
+// }<
+
+export async function generateStaticParams() {
+	const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
+	const data: PokemonResponse = await response.json();
+
+	return data.results.map((pokemon) => ({
+		id: pokemon.name,
+	}))
+}
+
 async function getPokemon(id: string): Promise<Pokemon> {
 	const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 	const data = await response.json();
@@ -43,7 +61,7 @@ export default async function Page({
 	return (
 		<div className="flex flex-col items-center justify-center gap-2 min-h-[50svh]">
 			<ViewTransition
-				name={`pokemon-${id}`}
+				name={`pokemon-${pokemon.name}`}
 				className="via-blur"
 				exit="duration-100"
 			>
